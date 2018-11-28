@@ -68,10 +68,7 @@
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackSkeletonAnimator.cs" />
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackStreamingClient.cs" />
     <Compile Include="Assets\Scripts\interactableitem.cs" />
-    <Compile Include="Assets\Scripts\keyinput.cs" />
     <Compile Include="Assets\Scripts\pid.cs" />
-    <Compile Include="Assets\Scripts\position_pid.cs" />
-    <Compile Include="Assets\Scripts\TCPTestClient.cs" />
     <Compile Include="Assets\Scripts\UDPSend.cs" />
     <Compile Include="Assets\Scripts\vivecontroller.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />

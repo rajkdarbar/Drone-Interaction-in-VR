@@ -36,90 +36,7 @@ public class UDPSend : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            SendMessage("takeoff");
-            Debug.Log("takeoff");
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            SendMessage("landing");
-            Debug.Log("landing");
-        }
 
-        //---------------------pitch--------------------------------------------
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            SendMessage("up_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            SendMessage("up_key_unpressed");
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            SendMessage("down_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            SendMessage("down_key_unpressed");
-        }
-
-        //---------------------roll--------------------------------------------
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SendMessage("right_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
-        {
-            SendMessage("right_key_unpressed");
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            SendMessage("left_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
-        {
-            SendMessage("left_key_unpressed");
-        }
-
-        //---------------------altitude--------------------------------------------
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            SendMessage("z_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            SendMessage("z_key_unpressed");
-        }
-
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            SendMessage("x_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.X))
-        {
-            SendMessage("x_key_unpressed");
-        }
-
-        //---------------------yaw--------------------------------------------
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SendMessage("r_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            SendMessage("r_key_unpressed");
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            SendMessage("t_key_pressed");
-        }
-        if (Input.GetKeyUp(KeyCode.T))
-        {
-            SendMessage("t_key_unpressed");
-        }
     }
 
     // sendData
@@ -127,10 +44,7 @@ public class UDPSend : MonoBehaviour
     {
         try
         {
-            // Daten mit der UTF8-Kodierung in das Binärformat kodieren.
             byte[] data = Encoding.UTF8.GetBytes(message);
-            
-            // Den message zum Remote-Client senden.
             client.Send(data, data.Length, remoteEndPoint);
         }
         catch (Exception err)

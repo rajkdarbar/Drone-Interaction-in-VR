@@ -6,11 +6,12 @@ public class interactableitem : MonoBehaviour
 {
     private bool currentlyInteracting;
     private vivecontroller attachedWand;
+    private Transform previousParent;
 
     // Use this for initialization
     void Start()
     {
-
+        previousParent = transform.parent;
     }
 
     // Update is called once per frame
@@ -18,10 +19,11 @@ public class interactableitem : MonoBehaviour
     {
         if (attachedWand && currentlyInteracting)
         {
-            
+            // in interaction mode, do nothing
         }
         else
         {
+            // not interacting : keep the target goal on interaction space and avoid rotation on X and Z axis
             transform.localEulerAngles = new Vector3(0, transform.rotation.eulerAngles.y, 0);
             float x = Mathf.Clamp(transform.position.x, -1.5f, 1.5f);
             float y = Mathf.Clamp(transform.position.y,  0.0f, 1.5f);
@@ -32,7 +34,9 @@ public class interactableitem : MonoBehaviour
 
     public void BeginInteraction(vivecontroller wand)
     {
+        // the goal game object become child of wand game object
         attachedWand = wand;
+        previousParent = transform.parent;
         transform.SetParent(wand.transform, true);
         currentlyInteracting = true;
     }
@@ -41,9 +45,10 @@ public class interactableitem : MonoBehaviour
     {
         if (wand == attachedWand)
         {
+            // detach goal game object to wand game object
             attachedWand = null;
             currentlyInteracting = false;
-            transform.parent = null;
+            transform.parent = previousParent;
         }
     }
 
