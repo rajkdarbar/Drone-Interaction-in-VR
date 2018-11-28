@@ -14,7 +14,7 @@ mambo = Mambo(mamboAddr, use_wifi=False)
 
 # UDP server global variable
 UDP_IP = '0.0.0.0'
-UDP_PORT = 5012
+UDP_PORT = 5028
 BUFFER_SIZE = 1024
 FRAME_RATE = 0.03
 MESSAGE = "Hello! Socket. Hope you are doing great!"
@@ -52,7 +52,8 @@ if (success):
                 if len(goal) == 4 :
                     print("x:"+str(int(goal[0]))+" y:"+str(int(goal[1]))+" z:"+str(int(goal[2]))+" o:"+str(int(goal[3])))
                     if(not DEBUG):
-                        mambo.fly_direct(roll=int(goal[2]), pitch=-int(goal[0]), yaw=int(goal[3]), vertical_movement=int(goal[1]), duration=FRAME_RATE)
+                        #mambo.fly_direct(roll=int(goal[2]), pitch=-int(goal[0]), yaw=int(goal[3]), vertical_movement=int(goal[1]), duration=FRAME_RATE)
+                        mambo.fly_direct(roll=int(goal[0]), pitch=int(goal[2]), yaw=int(goal[3]), vertical_movement=int(goal[1]), duration=FRAME_RATE)
                 else:
                     print("invalid data: " + str(data))
             
