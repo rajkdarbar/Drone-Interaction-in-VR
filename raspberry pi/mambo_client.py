@@ -14,7 +14,7 @@ mambo = Mambo(mamboAddr, use_wifi=False)
 
 # UDP server global variable
 UDP_IP = '0.0.0.0'
-UDP_PORT = 5028
+UDP_PORT = 5035
 BUFFER_SIZE = 1024
 FRAME_RATE = 0.03
 MESSAGE = "Hello! Socket. Hope you are doing great!"
@@ -35,8 +35,8 @@ print("connected: %s" % success)
 if (success):
     # takeoff
     if(not DEBUG):
-        mambo.safe_takeoff(4)
-        mambo.smart_sleep(4)
+        mambo.safe_takeoff(2)
+        mambo.smart_sleep(2)
     loopTime = time.clock()
 
     # running loop

@@ -9,7 +9,7 @@ public class pid : MonoBehaviour
     public GameObject goal;
     private UDPSend udpclient;
     
-    public float elapseTime = 0.016f;
+    public float elapseTime = 0.016f; // 16msec per frame ~ 62FPS
 
     private Vector3 integralPositionError;
     private Vector3 previousPositionError;

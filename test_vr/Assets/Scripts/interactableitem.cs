@@ -11,7 +11,7 @@ public class interactableitem : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        previousParent = transform.parent;
+        previousParent = this.transform.parent;
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class interactableitem : MonoBehaviour
     {
         // the goal game object become child of wand game object
         attachedWand = wand;
-        previousParent = transform.parent;
+        previousParent = this.transform.parent;
         transform.SetParent(wand.transform, true);
         currentlyInteracting = true;
     }
@@ -48,7 +48,7 @@ public class interactableitem : MonoBehaviour
             // detach goal game object to wand game object
             attachedWand = null;
             currentlyInteracting = false;
-            transform.parent = previousParent;
+            this.transform.parent = previousParent;
         }
     }
 
