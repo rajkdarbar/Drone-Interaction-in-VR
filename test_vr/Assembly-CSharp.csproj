@@ -69,8 +69,10 @@
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackStreamingClient.cs" />
     <Compile Include="Assets\Scripts\interactableitem.cs" />
     <Compile Include="Assets\Scripts\pid.cs" />
+    <Compile Include="Assets\Scripts\pidCollision.cs" />
     <Compile Include="Assets\Scripts\UDPSend.cs" />
     <Compile Include="Assets\Scripts\vivecontroller.cs" />
+    <Compile Include="Assets\Scripts\zeroGoal.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
     <Compile Include="Assets\SteamVR\Extras\SteamVR_Teleporter.cs" />
