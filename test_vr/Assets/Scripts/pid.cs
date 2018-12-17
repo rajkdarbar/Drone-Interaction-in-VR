@@ -64,7 +64,7 @@ public class pid : MonoBehaviour
         Vector3 derivativeError = (positionError - previousPositionError) / elapseTime;
 
         float angle = goal.transform.rotation.eulerAngles.y - transform.rotation.eulerAngles.y;
-        if (goal.GetComponent<interactableitem>().IsInteracting())   // goal is in interaction mode so drone dont follow goal orientation
+        if (goal.GetComponent<interactableitem>().IsInteracting())   // goal is in interaction mode, so drone dont follow goal orientation
             angle = 0.0f;
         
         //  keep angle between -180 and 180 degree
