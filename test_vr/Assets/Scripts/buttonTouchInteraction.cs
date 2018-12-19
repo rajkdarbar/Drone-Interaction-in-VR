@@ -21,11 +21,11 @@ public class buttonTouchInteraction : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (colliders == 0)
-        {
+       if (colliders == 0)
+       {
             gameObject.GetComponent<Renderer>().material.color = Color.red;
-        }
-        colliders++;
+       }
+        colliders++; 
     }
 
     private void OnCollisionExit(Collision collision)
