@@ -11,7 +11,7 @@ public class KeyboardInteraction : MonoBehaviour {
     private int key;
 
     void Start () {
-        key = 1;
+        key = 7;
         target_btn = GameObject.Find("target_button").transform.GetChild(0).GetComponent<TextMesh>();
         target_btn.text = key.ToString();
 
@@ -27,10 +27,10 @@ public class KeyboardInteraction : MonoBehaviour {
     public void childClick(GameObject child)
     {
         clicked_btn.text = child.transform.Find("Text").GetComponent<TextMesh>().text;
-
-        if(child.transform.Find("Text").GetComponent<TextMesh>().text == key.ToString())
+        if (child.transform.Find("Text").GetComponent<TextMesh>().text == key.ToString())
         {
-            key = Random.Range(1, 9);            
+            key = Random.Range(1, 9);
+            target_btn.text = key.ToString();            
             drone.goal = searchTargetByKey(key);
         }
     }

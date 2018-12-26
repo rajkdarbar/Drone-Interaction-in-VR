@@ -9,6 +9,7 @@ public class buttonTouchInteraction : MonoBehaviour {
     KeyboardInteraction parentKeyboard;
     private int colliders;
     private float delay = 0;
+    bool hasHitSomething = false;
 
     void Start()
     {
@@ -18,7 +19,24 @@ public class buttonTouchInteraction : MonoBehaviour {
     void Update () {
 
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
 
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+
+        gameObject.GetComponent<Renderer>().material.color = Color.black;
+        parentKeyboard.childClick(this.gameObject);
+
+    } 
+
+
+
+   /* 
     private void OnCollisionEnter(Collision collision)
     {
        if (colliders == 0)
@@ -37,5 +55,5 @@ public class buttonTouchInteraction : MonoBehaviour {
             parentKeyboard.childClick(this.gameObject);
         }
 
-    }
+    } */
 }
