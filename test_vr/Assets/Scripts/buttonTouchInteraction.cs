@@ -8,8 +8,6 @@ public class buttonTouchInteraction : MonoBehaviour {
 
     KeyboardInteraction parentKeyboard;
     private int colliders;
-    private float delay = 0;
-    bool hasHitSomething = false;
 
     void Start()
     {
@@ -30,7 +28,7 @@ public class buttonTouchInteraction : MonoBehaviour {
     {
 
         gameObject.GetComponent<Renderer>().material.color = Color.black;
-        parentKeyboard.childClick(this.gameObject);
+        //parentKeyboard.childClick(this.gameObject);
 
     } 
 
