@@ -1,6 +1,6 @@
 # Description
 
-**Interacting with Parrot Mambo Drone in VR using Optitrack.**
+**Interacting with Parrot Mambo Drone in VR, utilizing OptiTrack for tracking movements.**
 
 **Demo video:**
 
